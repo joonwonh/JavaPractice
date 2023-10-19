@@ -56,7 +56,7 @@ public class SmartPhone {
 			Addr addr = addrs[i];
 			if(addr.getName().contentEquals(name))	{
 				printAddr(addr);
-				return;
+				return;	// 찾았기 때문에 void타입이지만 return문을 사용하여 강제종료
 			}
 		}
 		System.out.println("검색 결과가 없습니다.");
