@@ -1,17 +1,17 @@
 package AddressMangementArrayList;
 
+
 public class Address {
 	private String name;
 	private String phoneNo;
-	private String mail;
+	private String id;
 	private String address;       
 	private String group;
 	
-	public Address(String name, String phoneNo, String mail, String address, String group)	{
+	public Address(String name, String id, String address, String group)	{
 		this.name = name;
-		this.phoneNo = phoneNo;
 		this.address = address;
-		this.mail = mail;
+		this.id = id;
 		this.group = group;
 	}
 
@@ -31,12 +31,12 @@ public class Address {
 		this.phoneNo = phoneNo;
 	}
 
-	public String getMail() {
-		return mail;
+	public String getId() {
+		return id;
 	}
 
-	public void setMail(String mail) {
-		this.mail = mail;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getAddress() {
@@ -53,5 +53,17 @@ public class Address {
 
 	public void setGroup(String group) {
 		this.group = group;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Address)	{
+			Address address = (Address)obj;
+			return (phoneNo == address.phoneNo);
+		}else
+			return false;
+	}
+	@Override
+	public int hashCode() {
+		return phoneNo.hashCode();
 	}
 }
