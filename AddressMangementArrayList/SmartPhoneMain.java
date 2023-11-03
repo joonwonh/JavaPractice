@@ -8,34 +8,28 @@ public class SmartPhoneMain {
 		Scanner sc = new Scanner(System.in);
 		SmartPhone smartPhone = new SmartPhone();
 		
-		System.out.println("데이터를 2개 입력하세요.");
-		for(int i=0; i<2; i++)	{
-			smartPhone.saveAddress(smartPhone.inputAddress());
-			System.out.println("--------------------------------");
-		}
-		
 		while(true)	{
 			smartPhone.printMenu();
 			int num = sc.nextInt();
 			sc.nextLine();
 			switch(num)	{
 			case 1:
-				smartPhone.saveAddress(smartPhone.inputAddress());
+				smartPhone.inputAddress();
 				break;
 			case 2:
 				smartPhone.printAllAddress();
 				break;
 			case 3:
-				System.out.print("찾으시려는 연락처의 이름을 입력하세요 >>>");
-				smartPhone.searchAddress(sc.nextLine());
+				System.out.print("찾으시려는 연락처의 번호를 입력하세요 >>>");
+				smartPhone.searchAddressV(sc.nextLine());
 				break;
 			case 4:
-				System.out.print("삭제하려는 연락처의 이름을 입력하세요 >>>");
+				System.out.print("삭제하시려는 연락처의 번호를 입력하세요 >>>");
 				smartPhone.deleteAddress(sc.nextLine());
 				break;
 			case 5:
-				System.out.println("수정하려는 연락처의 이름을 입력하세요 >>>");
-				smartPhone.modifyAddress(sc.nextLine(), smartPhone.inputAddress());
+				System.out.println("수정하시려는 연락처의 번호를 입력하세요 >>>");
+				smartPhone.modifyAddress(sc.nextLine());
 				break;
 			case 6:
 				System.out.println("프로그램을 종료합니다.");
